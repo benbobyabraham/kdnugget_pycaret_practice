@@ -44,6 +44,7 @@ GitHub is a cloud-based service that is used to host, manage and control code. I
 ##### Heroku
 
 Heroku is a platform as a service (PaaS) that enables the deployment of web apps based on a managed container system, with integrated data services and a powerful ecosystem. In simple words, this will allow you to take the application from your local machine to the cloud so that anybody can access it using a Web URL. In this tutorial we have chosen Heroku for deployment as it provides free resource hours when you sign up for new account.
+
 ![Machine Learning Workflow from Training to Deployment on PaaS](https://i.ibb.co/6gK19WD/pycaret-web-app-2.png)
 
 Machine Learning Workflow (from Training to Deployment on PaaS)
@@ -58,6 +59,7 @@ Normally machine learning models are built so that they can be used to predict a
 #### Business Problem
  
 An insurance company wants to improve its cash flow forecasting by better predicting patient charges using demographic and basic patient health risk metrics at the time of hospitalization.
+
 ![](https://i.ibb.co/Hn1953X/pycaret-web-app-3.png)
 
 #### Objective
@@ -118,6 +120,7 @@ Notice the impact of transformations and automatic feature engineering. The R2 h
 # plot residuals of trained model
 plot_model(lr, plot = 'residuals')
 ```
+
 ![](https://i.ibb.co/yfMy3Z9/pycaret-web-app-6.png)
 
 Residual Plot of Linear Regression Model(s)
@@ -200,6 +203,7 @@ Output in Anaconda Prompt when app.py is executed
 Once executed, copy the URL into a browser and it should open a web application hosted on your local machine (127.0.0.1). Try entering test values to see if the predict function is working. In the example below, the expected bill for a 19 year old female smoker with no children in the southwest is $20,900.
 
 ![](https://i.ibb.co/S7SgKdR/pycaret-web-app-12.png)
+
 Web application opened on local machine
 
  
@@ -214,6 +218,7 @@ Now that the model is trained, the machine learning pipeline is ready, and the a
 If you would like to follow along you can fork this repository from GitHub. If you don’t know how to fork a repo, please read this official GitHub tutorial.
 
 ![](https://i.ibb.co/brqDkWQ/pycaret-web-app-13.png)
+
 [https://www.github.com/pycaret/deployment-heroku](https://www.github.com/pycaret/deployment-heroku)
 
  
@@ -221,6 +226,7 @@ If you would like to follow along you can fork this repository from GitHub. If y
 By now you are familiar with all the files in repository shown above except for two files i.e. ‘requirements.txt’ and ‘Procfile’.
 
 ![](https://i.ibb.co/wgDJSR9/pycaret-web-app-13-b.png)
+
 requirements.txt
 
  
@@ -228,6 +234,7 @@ requirements.txt
 requirements.txt  file is a text file containing the names of the python packages required to execute the application. If these packages are not installed in the environment application is running, it will fail.
 
 ![](https://i.ibb.co/f1Tw86N/pycaret-web-app-13-c.png)
+
 Procfile
 
  
@@ -239,6 +246,7 @@ Once all the files are uploaded onto the GitHub repository, we are now ready to 
 Step 1 — Sign up on heroku.com and click on ‘Create new app’
 
 ![](https://i.ibb.co/YLy4htZ/pycaret-web-app-14.png)
+
 Heroku Dashboard
 
  
@@ -246,6 +254,7 @@ Heroku Dashboard
 Step 2 — Enter App name and region
 
 ![](https://i.ibb.co/JsnqrVn/pycaret-web-app-15.png)
+
 Heroku — Create new app
 
  
@@ -253,6 +262,7 @@ Heroku — Create new app
 Step 3 — Connect to your GitHub repository where code is hosted
 
 ![](https://i.ibb.co/L6HWPcq/pycaret-web-app-16.png)
+
 Heroku — Connect to GitHub
 
  
@@ -260,6 +270,7 @@ Heroku — Connect to GitHub
 Step 4 — Deploy branch
 
 ![](https://i.ibb.co/YtkPLbk/pycaret-web-app-17.png)
+
 Heroku — Deploy Branch
 
  
@@ -267,6 +278,7 @@ Heroku — Deploy Branch
 Step 5 — Wait 5–10 minutes and BOOM
 
 ![](https://i.ibb.co/YtkPLbk/pycaret-web-app-18.png)
+
 Heroku — Successful deployment
 
  
@@ -274,6 +286,7 @@ Heroku — Successful deployment
 App is published to URL: [https://pycaret-insurance.herokuapp.com/](https://pycaret-insurance.herokuapp.com/)
 
 ![](https://i.ibb.co/F6hnZRT/pycaret-web-app-19.png)
+
 [https://pycaret-insurance.herokuapp.com/](https://pycaret-insurance.herokuapp.com/)
 
  
@@ -283,6 +296,7 @@ There is one last thing to see before we end the tutorial.
 So far we have built and deployed a web application that works with our machine learning pipeline. Now imagine that you already have an enterprise application in which you want to integrate predictions from your model. What you need is a web service where you can make an API call with input data points and get the predictions back. To achieve this we have created the predict_api function in our ‘app.py’ file. See the code snippet:
 
 ![](https://i.ibb.co/NFtjFxk/pycaret-web-app-20.png)
+
 Code snippet from app.py file (back-end of web app)
 
  
@@ -294,6 +308,7 @@ import requestsurl = 'https://pycaret-insurance.herokuapp.com/predict_api'pred =
 ```
 
 ![](https://i.ibb.co/hdK5PWR/pycaret-web-app-21.png)
+
 Make a request to a published web service to generate predictions in a Notebook
 
  
