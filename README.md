@@ -129,6 +129,7 @@ save_model(lr, model_name = 'c:/username/ins/deployment_28042020')
 When you save a model in PyCaret, the entire transformation pipeline based on the configuration defined in the setup() function is created . All inter-dependencies are orchestrated automatically. See the pipeline and model stored in the ‘deployment_28042020’ variable:
 
 ![](https://i.ibb.co/XDyHLLp/pycaret-web-app-7.png)
+
 Pipeline created using PyCaret
 
 
