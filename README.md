@@ -45,6 +45,7 @@ GitHub is a cloud-based service that is used to host, manage and control code. I
 
 Heroku is a platform as a service (PaaS) that enables the deployment of web apps based on a managed container system, with integrated data services and a powerful ecosystem. In simple words, this will allow you to take the application from your local machine to the cloud so that anybody can access it using a Web URL. In this tutorial we have chosen Heroku for deployment as it provides free resource hours when you sign up for new account.
 ![Machine Learning Workflow from Training to Deployment on PaaS](https://i.ibb.co/6gK19WD/pycaret-web-app-2.png)
+
 Machine Learning Workflow (from Training to Deployment on PaaS)
 
 #### Why Deploy Machine Learning Models?
@@ -89,11 +90,13 @@ In this tutorial, we have performed two experiments. The first experiment is per
 ```
 
 ![Comparison of information grid for both experiments](https://i.ibb.co/Qcy6R9M/pycaret-web-app-4.png)
+
 Comparison of information grid for both experiments
 
 The magic happens with only a few lines of code. Notice that in Experiment 2 the transformed dataset has 62 features for training derived from only 7 features in the original dataset. All of the new features are the result of transformations and automatic feature engineering in PyCaret.
 
 ![Columns in dataset after transformation](https://i.ibb.co/rZRGQtV/pycaret-web-app-4-b.png)
+
 Columns in dataset after transformation
 
  
@@ -106,6 +109,7 @@ lr = create_model('lr')
 ```
 
 ![](https://i.ibb.co/0BFw93Y/pycaret-web-app-5.png)
+
 10 Fold cross-validation of Linear Regression Model(s)
 
 Notice the impact of transformations and automatic feature engineering. The R2 has increased by 10% with very little effort. We can compare the residual plot of linear regression model for both experiments and observe the impact of transformations and feature engineering on the heteroskedasticity of model.
@@ -115,6 +119,7 @@ Notice the impact of transformations and automatic feature engineering. The R2 h
 plot_model(lr, plot = 'residuals')
 ```
 ![](https://i.ibb.co/yfMy3Z9/pycaret-web-app-6.png)
+
 Residual Plot of Linear Regression Model(s)
 
 Machine learning is an iterative process. Number of iterations and techniques used within are dependent on how critical the task is and what the impact will be if predictions are wrong. The severity and impact of a machine learning model to predict a patient outcome in real-time in the ICU of a hospital is far more than a model built to predict customer churn.
@@ -148,6 +153,7 @@ Now that our machine learning pipeline and model are ready we will start buildin
 Generally, the front-end of web applications are built using HTML which is not the focus of this article. We have used a simple HTML template and a CSS style sheet to design an input form. Here’s the HTML snippet of the front-end page of our web application.
 
 ![](https://i.ibb.co/7yhsQsV/pycaret-web-app-8.png)
+
 Code snippet from home.html file
 
 You don’t need to be an expert in HTML to build simple applications. There are numerous free platforms that provide HTML and CSS templates as well as enable building beautiful HTML pages quickly by using a drag and drop interface.
@@ -157,6 +163,7 @@ You don’t need to be an expert in HTML to build simple applications. There are
 CSS (also known as Cascading Style Sheets) describes how HTML elements are displayed on a screen. It is an efficient way of controlling the layout of your application. Style sheets contain information such as background color, font size and color, margins etc. They are saved externally as a .css file and is linked to HTML but including 1 line of code.
 
 ![](https://i.ibb.co/mGy3tCL/pycaret-web-app-9.png)
+
 Code snippet from home.html file
 
 #### Back-end of Web Application
@@ -164,6 +171,7 @@ Code snippet from home.html file
 The back-end of a web application is developed using a Flask framework. For beginner’s it is intuitive to consider Flask as a library that you can import just like any other library in Python. See the sample code snippet of our back-end written using a Flask framework in Python.
 
 ![](https://i.ibb.co/71hvBj0/pycaret-web-app-10.png)
+
 Code snippet from app.py file
 
 
@@ -184,6 +192,7 @@ python app.py
 ```
 
 ![](https://i.ibb.co/xDngYdg/pycaret-web-app-11.png)
+
 Output in Anaconda Prompt when app.py is executed
 
  
