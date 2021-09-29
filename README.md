@@ -44,7 +44,9 @@ GitHub is a cloud-based service that is used to host, manage and control code. I
 ##### Heroku
 
 Heroku is a platform as a service (PaaS) that enables the deployment of web apps based on a managed container system, with integrated data services and a powerful ecosystem. In simple words, this will allow you to take the application from your local machine to the cloud so that anybody can access it using a Web URL. In this tutorial we have chosen Heroku for deployment as it provides free resource hours when you sign up for new account.
+
 ![Machine Learning Workflow from Training to Deployment on PaaS](https://i.ibb.co/6gK19WD/pycaret-web-app-2.png)
+
 Machine Learning Workflow (from Training to Deployment on PaaS)
 
 #### Why Deploy Machine Learning Models?
@@ -57,6 +59,7 @@ Normally machine learning models are built so that they can be used to predict a
 #### Business Problem
  
 An insurance company wants to improve its cash flow forecasting by better predicting patient charges using demographic and basic patient health risk metrics at the time of hospitalization.
+
 ![](https://i.ibb.co/Hn1953X/pycaret-web-app-3.png)
 
 #### Objective
@@ -89,11 +92,13 @@ In this tutorial, we have performed two experiments. The first experiment is per
 ```
 
 ![Comparison of information grid for both experiments](https://i.ibb.co/Qcy6R9M/pycaret-web-app-4.png)
+
 Comparison of information grid for both experiments
 
 The magic happens with only a few lines of code. Notice that in Experiment 2 the transformed dataset has 62 features for training derived from only 7 features in the original dataset. All of the new features are the result of transformations and automatic feature engineering in PyCaret.
 
 ![Columns in dataset after transformation](https://i.ibb.co/rZRGQtV/pycaret-web-app-4-b.png)
+
 Columns in dataset after transformation
 
  
@@ -106,6 +111,7 @@ lr = create_model('lr')
 ```
 
 ![](https://i.ibb.co/0BFw93Y/pycaret-web-app-5.png)
+
 10 Fold cross-validation of Linear Regression Model(s)
 
 Notice the impact of transformations and automatic feature engineering. The R2 has increased by 10% with very little effort. We can compare the residual plot of linear regression model for both experiments and observe the impact of transformations and feature engineering on the heteroskedasticity of model.
@@ -114,7 +120,9 @@ Notice the impact of transformations and automatic feature engineering. The R2 h
 # plot residuals of trained model
 plot_model(lr, plot = 'residuals')
 ```
+
 ![](https://i.ibb.co/yfMy3Z9/pycaret-web-app-6.png)
+
 Residual Plot of Linear Regression Model(s)
 
 Machine learning is an iterative process. Number of iterations and techniques used within are dependent on how critical the task is and what the impact will be if predictions are wrong. The severity and impact of a machine learning model to predict a patient outcome in real-time in the ICU of a hospital is far more than a model built to predict customer churn.
@@ -129,6 +137,7 @@ save_model(lr, model_name = 'c:/username/ins/deployment_28042020')
 When you save a model in PyCaret, the entire transformation pipeline based on the configuration defined in the setup() function is created . All inter-dependencies are orchestrated automatically. See the pipeline and model stored in the ‘deployment_28042020’ variable:
 
 ![](https://i.ibb.co/XDyHLLp/pycaret-web-app-7.png)
+
 Pipeline created using PyCaret
 
 
@@ -147,6 +156,7 @@ Now that our machine learning pipeline and model are ready we will start buildin
 Generally, the front-end of web applications are built using HTML which is not the focus of this article. We have used a simple HTML template and a CSS style sheet to design an input form. Here’s the HTML snippet of the front-end page of our web application.
 
 ![](https://i.ibb.co/7yhsQsV/pycaret-web-app-8.png)
+
 Code snippet from home.html file
 
 You don’t need to be an expert in HTML to build simple applications. There are numerous free platforms that provide HTML and CSS templates as well as enable building beautiful HTML pages quickly by using a drag and drop interface.
@@ -156,6 +166,7 @@ You don’t need to be an expert in HTML to build simple applications. There are
 CSS (also known as Cascading Style Sheets) describes how HTML elements are displayed on a screen. It is an efficient way of controlling the layout of your application. Style sheets contain information such as background color, font size and color, margins etc. They are saved externally as a .css file and is linked to HTML but including 1 line of code.
 
 ![](https://i.ibb.co/mGy3tCL/pycaret-web-app-9.png)
+
 Code snippet from home.html file
 
 #### Back-end of Web Application
@@ -163,6 +174,7 @@ Code snippet from home.html file
 The back-end of a web application is developed using a Flask framework. For beginner’s it is intuitive to consider Flask as a library that you can import just like any other library in Python. See the sample code snippet of our back-end written using a Flask framework in Python.
 
 ![](https://i.ibb.co/71hvBj0/pycaret-web-app-10.png)
+
 Code snippet from app.py file
 
 
@@ -183,6 +195,7 @@ python app.py
 ```
 
 ![](https://i.ibb.co/xDngYdg/pycaret-web-app-11.png)
+
 Output in Anaconda Prompt when app.py is executed
 
  
@@ -190,6 +203,7 @@ Output in Anaconda Prompt when app.py is executed
 Once executed, copy the URL into a browser and it should open a web application hosted on your local machine (127.0.0.1). Try entering test values to see if the predict function is working. In the example below, the expected bill for a 19 year old female smoker with no children in the southwest is $20,900.
 
 ![](https://i.ibb.co/S7SgKdR/pycaret-web-app-12.png)
+
 Web application opened on local machine
 
  
@@ -204,6 +218,7 @@ Now that the model is trained, the machine learning pipeline is ready, and the a
 If you would like to follow along you can fork this repository from GitHub. If you don’t know how to fork a repo, please read this official GitHub tutorial.
 
 ![](https://i.ibb.co/brqDkWQ/pycaret-web-app-13.png)
+
 [https://www.github.com/pycaret/deployment-heroku](https://www.github.com/pycaret/deployment-heroku)
 
  
@@ -211,6 +226,7 @@ If you would like to follow along you can fork this repository from GitHub. If y
 By now you are familiar with all the files in repository shown above except for two files i.e. ‘requirements.txt’ and ‘Procfile’.
 
 ![](https://i.ibb.co/wgDJSR9/pycaret-web-app-13-b.png)
+
 requirements.txt
 
  
@@ -218,6 +234,7 @@ requirements.txt
 requirements.txt  file is a text file containing the names of the python packages required to execute the application. If these packages are not installed in the environment application is running, it will fail.
 
 ![](https://i.ibb.co/f1Tw86N/pycaret-web-app-13-c.png)
+
 Procfile
 
  
@@ -229,6 +246,7 @@ Once all the files are uploaded onto the GitHub repository, we are now ready to 
 Step 1 — Sign up on heroku.com and click on ‘Create new app’
 
 ![](https://i.ibb.co/YLy4htZ/pycaret-web-app-14.png)
+
 Heroku Dashboard
 
  
@@ -236,6 +254,7 @@ Heroku Dashboard
 Step 2 — Enter App name and region
 
 ![](https://i.ibb.co/JsnqrVn/pycaret-web-app-15.png)
+
 Heroku — Create new app
 
  
@@ -243,6 +262,7 @@ Heroku — Create new app
 Step 3 — Connect to your GitHub repository where code is hosted
 
 ![](https://i.ibb.co/L6HWPcq/pycaret-web-app-16.png)
+
 Heroku — Connect to GitHub
 
  
@@ -250,6 +270,7 @@ Heroku — Connect to GitHub
 Step 4 — Deploy branch
 
 ![](https://i.ibb.co/YtkPLbk/pycaret-web-app-17.png)
+
 Heroku — Deploy Branch
 
  
@@ -257,6 +278,7 @@ Heroku — Deploy Branch
 Step 5 — Wait 5–10 minutes and BOOM
 
 ![](https://i.ibb.co/YtkPLbk/pycaret-web-app-18.png)
+
 Heroku — Successful deployment
 
  
@@ -264,6 +286,7 @@ Heroku — Successful deployment
 App is published to URL: [https://pycaret-insurance.herokuapp.com/](https://pycaret-insurance.herokuapp.com/)
 
 ![](https://i.ibb.co/F6hnZRT/pycaret-web-app-19.png)
+
 [https://pycaret-insurance.herokuapp.com/](https://pycaret-insurance.herokuapp.com/)
 
  
@@ -273,6 +296,7 @@ There is one last thing to see before we end the tutorial.
 So far we have built and deployed a web application that works with our machine learning pipeline. Now imagine that you already have an enterprise application in which you want to integrate predictions from your model. What you need is a web service where you can make an API call with input data points and get the predictions back. To achieve this we have created the predict_api function in our ‘app.py’ file. See the code snippet:
 
 ![](https://i.ibb.co/NFtjFxk/pycaret-web-app-20.png)
+
 Code snippet from app.py file (back-end of web app)
 
  
@@ -284,6 +308,7 @@ import requestsurl = 'https://pycaret-insurance.herokuapp.com/predict_api'pred =
 ```
 
 ![](https://i.ibb.co/hdK5PWR/pycaret-web-app-21.png)
+
 Make a request to a published web service to generate predictions in a Notebook
 
  
